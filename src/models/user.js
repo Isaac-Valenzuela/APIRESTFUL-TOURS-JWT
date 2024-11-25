@@ -3,6 +3,7 @@ import bcrypt from 'bcrypt';
 
 import dotenv from 'dotenv'
 
+dotenv.config()
 const userModel = {
 
     async registerUserModel(newUser){
