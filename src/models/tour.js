@@ -1,6 +1,7 @@
 const tourModel ={
 
     async getAllToursModel(){
+        // `${process.envv.asdasdsa}/${tourId}`
         const peticion = await fetch('http://localhost:4000/tours')
         const tours = await peticion.json()
         return tours
