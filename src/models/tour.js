@@ -1,8 +1,12 @@
+
+import dotenv from 'dotenv'
+
+dotenv.config()
 const tourModel ={
 
     async getAllToursModel(){
         // `${process.envv.asdasdsa}/${tourId}`
-        const peticion = await fetch('http://localhost:4000/tours')
+        const peticion = await fetch(process.env.URL_BDD_TOURS)
         const tours = await peticion.json()
         return tours
     }
