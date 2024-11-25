@@ -7,7 +7,7 @@ dotenv.config()
 const userModel = {
 
     async registerUserModel(newUser){
-        const url = process.env.URL_BBB_USERS
+        const url = await fetch(process.env.URL_BBB_USERS)
         const peticion = await fetch(url,{
             method:"POST",
             body:JSON.stringify(newUser),
@@ -20,7 +20,7 @@ const userModel = {
     ,
 
     async loginUserModel(username,password){
-        const url = process.env.URL_BBB_USERS
+        const url = await fetch(process.env.URL_BBB_USERS)
         const peticion = await fetch(url)
         const users = await peticion.json()
         const user = users.find(user => user.username === username)
